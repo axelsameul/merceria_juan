@@ -19,6 +19,7 @@ export default function Login() {
 
       // Guardamos los datos en localStorage
       localStorage.setItem("usuario", JSON.stringify(res.data));
+      window.location.reload();
 
       setMensaje("Inicio de sesión exitoso ✅");
       navigate("/admin"); // redirige al panel admin

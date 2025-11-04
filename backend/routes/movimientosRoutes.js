@@ -3,16 +3,15 @@ const router = express.Router();
 const {
   getMovimientos,
   agregarMovimiento,
-  getResumen
+  getResumen,
+  deleteMove,
+  editMove
 } = require('../controllers/movimientosController');
 
-// Obtener todos los movimientos
+
 router.get('/', getMovimientos);
-
-// Agregar un nuevo movimiento (ingreso o gasto)
 router.post('/', agregarMovimiento);
-
-// Obtener resumen contable
 router.get('/resumen', getResumen);
-
+router.delete('/eliminar/:id',deleteMove)
+router.put('/editar/:id', editMove)
 module.exports = router;
